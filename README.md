@@ -20,13 +20,6 @@
 
 ---
 
-## 🖼️ Screenshots
-
-<p align="center">
-  <img src="./public/assets/images/1.jpeg" width="45%" />
-  <img src="./public/assets/images/2.jpeg" width="45%" />
-</p>
-
 <p align="center">
   <img src="./public/assets/images/3.jpeg" width="60%" />
 </p>
