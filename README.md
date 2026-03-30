@@ -20,12 +20,6 @@
 
 ---
 
-<p align="center">
-  <img src="./public/assets/images/3.jpeg" width="60%" />
-</p>
-
----
-
 ## 🌟 Overview
 
 FundRise is a full-featured crowdfunding web application that allows users to create, manage, and support campaigns.
