@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FundRise | Campaign Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages/form.css" />
+  </head>
+  <body data-page="create-campaign">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="../index.html">
+          <span class="brand__mark">FR</span>
+          <span>FundRise</span>
+        </a>
+
+        <nav class="topbar__nav">
+          <a class="btn btn--ghost btn--small" href="./HomeUser.html">
+            Back to Dashboard
+          </a>
+          <button class="btn btn--dark btn--small" id="logoutBtn" type="button">
+            Logout
+          </button>
+        </nav>
+      </header>
+
+      <main class="page page--form">
+        <section class="panel editor-layout">
+          <div class="editor-copy">
+            <p class="eyebrow">Campaign editor</p>
+            <h1 id="formHeading">Create a new campaign</h1>
+            <p class="hero__text">
+              Submit a polished campaign with a strong story, deadline, goal, and
+              category. Admin approval is required before it appears publicly.
+            </p>
+          </div>
+
+          <form class="form-card" id="campaignForm">
+            <div class="form-grid">
+              <label class="field">
+                <span>Campaign title</span>
+                <input id="title" name="title" type="text" required />
+              </label>
+
+              <label class="field">
+                <span>Category</span>
+                <select id="category" name="category" required>
+                  <option value="">Select category</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Music">Music</option>
+                  <option value="Education">Education</option>
+                  <option value="Community">Community</option>
+                  <option value="Health">Health</option>
+                  <option value="other">other</option>
+                </select>
+              </label>
+
+              <label class="field field--wide">
+                <span>Description</span>
+                <textarea id="description" name="description" rows="5" required></textarea>
+              </label>
+
+              <label class="field">
+                <span>Funding goal</span>
+                <input id="goal" name="goal" type="number" min="1" required />
+              </label>
+
+              <label class="field">
+                <span>Deadline</span>
+                <input id="deadline" name="deadline" type="date" required />
+              </label>
+
+              <label class="field field--wide">
+                <span>Campaign image</span>
+                <input id="image" name="image" type="file" accept="image/*" />
+              </label>
+            </div>
+
+            <img id="imagePreview" class="image-preview" alt="Campaign preview" />
+
+            <div class="form-actions">
+              <button class="btn btn--primary" id="submitBtn" type="submit">
+                Submit Campaign
+              </button>
+              <a class="btn btn--ghost" href="./HomeUser.html">Cancel</a>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <a class="brand" href="../index.html">
+              <span class="brand__mark">FR</span>
+              <span>FundRise</span>
+            </a>
+            <p>
+              Professional campaign tools designed to help your idea look ready
+              for real backers.
+            </p>
+          </div>
+
+          <div class="site-footer__links">
+            <div>
+              <h3>Creator tools</h3>
+              <a href="./HomeUser.html">Dashboard</a>
+              <a href="./CreateCampaign.html">Campaign editor</a>
+            </div>
+
+            <div>
+              <h3>Guidance</h3>
+              <span>Clear goals</span>
+              <span>Strong visuals</span>
+              <span>Accurate deadlines</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

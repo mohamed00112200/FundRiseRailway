@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FundRise | Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages/auth.css" />
+  </head>
+  <body data-page="login">
+    <div class="site-shell">
+      <main class="auth-shell">
+        <section class="auth-copy">
+          <a class="brand" href="../index.html">
+            <span class="brand__mark">FR</span>
+            <span>FundRise</span>
+          </a>
+          <p class="eyebrow">Welcome back</p>
+          <h1>Login to manage campaigns and pledges</h1>
+          <p>
+            Use your account to create campaigns, support creators, or moderate the
+            platform if you are an admin.
+          </p>
+        </section>
+
+        <section class="auth-card">
+          <form id="loginForm">
+            <label class="field">
+              <span>Email</span>
+              <input id="loginEmail" type="email" required />
+            </label>
+
+            <label class="field">
+              <span>Password</span>
+              <input id="loginPassword" type="password" required />
+            </label>
+
+            <button class="btn btn--primary btn--block" type="submit">
+              Login
+            </button>
+          </form>
+
+          <p class="auth-link">
+            Need an account?
+            <a href="./register.html">Create one here</a>
+          </p>
+        </section>
+      </main>
+
+      <footer class="site-footer site-footer--compact">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <a class="brand" href="../index.html">
+              <span class="brand__mark">FR</span>
+              <span>FundRise</span>
+            </a>
+            <p>Trusted access for creators, backers, and platform admins.</p>
+          </div>
+
+          <div class="site-footer__links">
+            <div>
+              <h3>Access</h3>
+              <a href="./login.html">Login</a>
+              <a href="./register.html">Register</a>
+            </div>
+
+            <div>
+              <h3>Support</h3>
+              <a href="mailto:mohamedmm6723423@gmail.com">support@fundrise.com</a>
+              <span>Available 24/7</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

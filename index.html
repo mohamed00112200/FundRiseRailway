@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FundRise | Discover Campaigns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/pages/home.css" />
+  </head>
+  <body data-page="landing">
+    <div class="site-shell site-shell--hero">
+      <header class="topbar">
+        <a class="brand" href="./index.html">
+          <span class="brand__mark">FR</span>
+          <span>FundRise</span>
+        </a>
+
+        <nav class="topbar__nav">
+          <a href="./pages/login.html">Login</a>
+          <a href="./pages/register.html">Register</a>
+        </nav>
+      </header>
+
+      <main class="page page--landing">
+        <section class="hero">
+          <div class="hero__copy">
+            <p class="eyebrow">Crowdfunding platform</p>
+            <h1>Back bold ideas. Launch ambitious campaigns.</h1>
+            <p class="hero__text">
+              Browse approved campaigns, search by category, and support projects
+              built by creators in your community.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="./pages/register.html">
+                Start as Creator
+              </a>
+              <a class="btn btn--ghost" href="./pages/login.html">
+                Member Login
+              </a>
+            </div>
+
+            <div class="hero__trust">
+              <span>Approved campaigns only</span>
+              <span>Fast creator onboarding</span>
+              <span>Simple pledge experience</span>
+            </div>
+          </div>
+
+          <aside class="hero__spotlight">
+            <div class="hero__spotlight-top">
+              <p class="section-label">Platform pulse</p>
+              <h2>Live funding snapshot</h2>
+              <p class="hero__spotlight-text">
+                Explore verified opportunities and discover what the platform is
+                funding right now.
+              </p>
+            </div>
+
+            <div class="hero__stats-grid">
+              <article class="stat-card stat-card--featured stat-card--accent">
+                <span class="stat-card__label">Approved campaigns</span>
+                <strong id="approvedCount">0</strong>
+                <small class="stat-card__hint">Public opportunities open for discovery</small>
+              </article>
+
+              <article class="stat-card stat-card--featured">
+                <span class="stat-card__label">Total pledged</span>
+                <strong id="pledgedTotal">$0</strong>
+                <small class="stat-card__hint">Capital raised across active campaigns</small>
+              </article>
+
+              <article class="stat-card stat-card--featured">
+                <span class="stat-card__label">Active categories</span>
+                <strong id="categoryCount">0</strong>
+                <small class="stat-card__hint">Sectors currently available to explore</small>
+              </article>
+            </div>
+          </aside>
+        </section>
+
+        <section class="panel panel--filters landing-search">
+          <div class="landing-search__copy">
+            <p class="section-label">Explore campaigns</p>
+            <h2>Approved opportunities only</h2>
+            <p>
+              Search by title or narrow the view by category to discover
+              high-potential campaigns faster.
+            </p>
+          </div>
+
+          <div class="toolbar landing-search__toolbar">
+            <label class="field field--inline landing-search__field landing-search__field--wide">
+              <span>Search</span>
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Search by title or description"
+              />
+            </label>
+
+            <label class="field field--inline landing-search__field">
+              <span>Category</span>
+              <select id="categoryFilter">
+                <option value="all">All categories</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="campaign-grid" id="campaigns-container"></section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <a class="brand" href="./index.html">
+              <span class="brand__mark">FR</span>
+              <span>FundRise</span>
+            </a>
+            <p>
+              A modern crowdfunding platform for creators, communities, and bold
+              ideas that deserve global support.
+            </p>
+          </div>
+
+          <div class="site-footer__links">
+            <div>
+              <h3>Platform</h3>
+              <a href="./index.html">Discover</a>
+              <a href="./pages/register.html">Start a campaign</a>
+              <a href="./pages/login.html">Member access</a>
+            </div>
+
+            <div>
+              <h3>Categories</h3>
+              <a href="./index.html">Technology</a>
+              <a href="./index.html">Music</a>
+              <a href="./index.html">Education</a>
+            </div>
+
+            <div>
+              <h3>Contact</h3>
+              <a href="mailto:mohamedmm6723423@gmail.com">support@fundrise.com</a>
+              <a href="tel:+201556439792">+201556439792</a>
+              <span>Cairo, Egypt</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <span>© 2026 FundRise. All rights reserved by <a href="#" style="color: aquamarine;">Mohamed Lofty</a></span>
+          <div class="site-footer__meta">
+            <span>Privacy</span>
+            <span>Terms</span>
+            <span>Trust & Safety</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FundRise | User Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages/home.css" />
+    <link rel="stylesheet" href="../css/pages/form.css" />
+  </head>
+  <body data-page="home-user">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="../index.html">
+          <span class="brand__mark">FR</span>
+          <span>FundRise</span>
+        </a>
+
+        <nav class="topbar__nav">
+          <span class="welcome" id="userLabel"></span>
+          <a class="btn btn--ghost btn--small" href="./CreateCampaign.html">
+            New Campaign
+          </a>
+          <button class="btn btn--dark btn--small" id="logoutBtn" type="button">
+            Logout
+          </button>
+        </nav>
+      </header>
+
+      <main class="page page--dashboard">
+        <section class="panel panel--hero">
+          <div>
+            <p class="eyebrow">Creator dashboard</p>
+            <h1>Manage your campaigns and support others</h1>
+            <p class="hero__text">
+              Track approved campaigns, review your pledge history, and update
+              your own submissions.
+            </p>
+          </div>
+
+          <div class="dashboard-stats">
+            <article class="stat-card">
+              <span>My campaigns</span>
+              <strong id="myCampaignCount">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>My pledges</span>
+              <strong id="myPledgeCount">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Total supported</span>
+              <strong id="myPledgeTotal">$0</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel quick-access">
+          <div>
+            <p class="section-label">Quick access</p>
+            <h2>Open your private activity</h2>
+          </div>
+
+          <div class="quick-access__actions">
+            <button
+              class="quick-access__card"
+              id="showMyCampaignsBtn"
+              type="button"
+            >
+              <span class="quick-access__eyebrow">Creator space</span>
+              <strong>My campaigns</strong>
+            </button>
+            <button
+              class="quick-access__card quick-access__card--alt"
+              id="showPledgeHistoryBtn"
+              type="button"
+            >
+              <span class="quick-access__eyebrow">Support activity</span>
+              <strong>Pledge history</strong>
+            </button>
+          </div>
+        </section>
+        <section class="activity-modal hidden" id="myCampaignsModal">
+          <div class="activity-modal__card">
+            <div class="activity-modal__header">
+              <div>
+                <p class="section-label">My campaigns</p>
+                <h2>Drafts, pending, and approved</h2>
+              </div>
+              <button
+                class="activity-modal__close"
+                id="closeMyCampaignsBtn"
+                type="button"
+              >
+                ×
+              </button>
+            </div>
+            <div class="stack-list" id="myCampaigns"></div>
+          </div>
+        </section>
+
+        <section class="activity-modal hidden" id="pledgeHistoryModal">
+          <div class="activity-modal__card">
+            <div class="activity-modal__header">
+              <div>
+                <p class="section-label">Pledge history</p>
+                <h2>Everything you supported</h2>
+              </div>
+              <button
+                class="activity-modal__close"
+                id="closePledgeHistoryBtn"
+                type="button"
+              >
+                ×
+              </button>
+            </div>
+            <div class="stack-list" id="pledgeHistory"></div>
+          </div>
+        </section>
+
+        <section class="panel panel--filters">
+          <div>
+            <p class="section-label">Campaign discovery</p>
+            <h2>Support approved campaigns</h2>
+          </div>
+
+          <div class="toolbar">
+            <label class="field field--inline">
+              <span>Search</span>
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Search campaigns"
+              />
+            </label>
+
+            <label class="field field--inline">
+              <span>Status</span>
+              <select id="statusFilter">
+                <option value="all">All approved</option>
+                <option value="active">Still funding</option>
+                <option value="completed">Goal reached</option>
+              </select>
+            </label>
+
+            <label class="field field--inline">
+              <span>Category</span>
+              <select id="categoryFilter">
+                <option value="all">All categories</option>
+              </select>
+            </label>
+          </div>
+        </section>
+        <section class="campaign-grid" id="campaigns-container"></section>
+
+        <section class="payment-modal hidden" id="paymentModal">
+          <div class="payment-modal__card">
+            <div class="payment-modal__header">
+              <div>
+                <p class="section-label">Mock payment</p>
+                <h2>Confirm support</h2>
+              </div>
+              <button
+                class="payment-modal__close"
+                id="closePaymentBtn"
+                type="button"
+              >
+                ×
+              </button>
+            </div>
+
+            <div class="payment-modal__summary">
+              <div>
+                <span>Campaign</span>
+                <strong id="paymentCampaign">Campaign</strong>
+              </div>
+              <div>
+                <span>Amount</span>
+                <strong id="paymentAmount">$0</strong>
+              </div>
+            </div>
+
+            <form class="payment-form" id="paymentForm">
+              <div class="payment-form__row payment-form__row--compact">
+                <label class="field">
+                  <span>Method</span>
+                  <select id="paymentMethod" required>
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="apple-pay">Apple Pay</option>
+                  </select>
+                </label>
+
+                <label class="field">
+                  <span id="paymentAccountLabel">Account</span>
+                  <input
+                    id="paymentAccountName"
+                    type="text"
+                    placeholder="Mohamed Lotfy"
+                    required
+                  />
+                </label>
+              </div>
+
+              <label class="field">
+                <span id="paymentDetailsLabel">Reference</span>
+                <input
+                  id="paymentAccountNumber"
+                  type="text"
+                  placeholder="VISA-4242"
+                  required
+                />
+              </label>
+
+              <div class="payment-form__actions">
+                <button
+                  class="btn btn--ghost"
+                  id="cancelPaymentBtn"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button class="btn btn--primary" type="submit">
+                  Confirm payment
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <a class="brand" href="../index.html">
+              <span class="brand__mark">FR</span>
+              <span>FundRise</span>
+            </a>
+            <p>
+              Built for creators who want stronger storytelling, cleaner funding
+              workflows, and serious backer trust.
+            </p>
+          </div>
+
+          <div class="site-footer__links">
+            <div>
+              <h3>Workspace</h3>
+              <a href="./HomeUser.html">Dashboard</a>
+              <a href="./CreateCampaign.html">Create campaign</a>
+            </div>
+
+            <div>
+              <h3>Resources</h3>
+              <span>Campaign strategy</span>
+              <span>Backer communication</span>
+              <span>Trust & reporting</span>
+            </div>
+
+            <div>
+              <h3>Contact</h3>
+              <a href="mailto:mohamedmm6723423@gmail.com"
+                >support@fundrise.com</a
+              >
+              <span>Creator Success Team</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <span>© 2026 FundRise. Built for creators and communities.</span>
+          <div class="site-footer__meta">
+            <span>Privacy</span>
+            <span>Terms</span>
+            <span>Security</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

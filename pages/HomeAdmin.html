@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FundRise | Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages/admin.css" />
+  </head>
+  <body data-page="home-admin">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="../index.html">
+          <span class="brand__mark">FR</span>
+          <span>FundRise</span>
+        </a>
+
+        <nav class="topbar__nav">
+          <span class="welcome" id="userLabel"></span>
+          <button class="btn btn--dark btn--small" id="logoutBtn" type="button">
+            Logout
+          </button>
+        </nav>
+      </header>
+
+      <main class="page">
+        <section class="panel panel--hero admin-hero">
+          <div>
+            <p class="eyebrow">Admin control center</p>
+            <h1>Moderate users, campaigns, and pledges</h1>
+            <p class="hero__text">
+              Review registrations, approve or reject campaigns, and monitor all
+              platform activity from one place.
+            </p>
+          </div>
+
+          <div class="dashboard-stats">
+            <article class="stat-card">
+              <span>Users</span>
+              <strong id="userCount">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Campaigns</span>
+              <strong id="campaignCount">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Pledges</span>
+              <strong id="pledgeCount">0</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="admin-layout">
+          <aside class="panel admin-sidebar">
+            <p class="section-label">Dashboard menu</p>
+            <button class="admin-tab admin-tab--active" data-section="users" type="button">
+              Users
+            </button>
+            <button class="admin-tab" data-section="campaigns" type="button">
+              Campaigns
+            </button>
+            <button class="admin-tab" data-section="pledges" type="button">
+              Pledges
+            </button>
+          </aside>
+
+          <div class="admin-content">
+            <section class="panel admin-section" id="section-users">
+              <div class="section-heading">
+                <div>
+                  <p class="section-label">User management</p>
+                  <h2>Ban or restore accounts</h2>
+                </div>
+              </div>
+              <div class="stack-list" id="adminUsers"></div>
+            </section>
+
+            <section class="panel admin-section hidden" id="section-campaigns">
+              <div class="section-heading">
+                <div>
+                  <p class="section-label">Campaign moderation</p>
+                  <h2>Approve, reject, or delete</h2>
+                </div>
+              </div>
+              <div class="stack-list" id="adminCampaigns"></div>
+            </section>
+
+            <section class="panel admin-section hidden" id="section-pledges">
+              <div class="section-heading">
+                <div>
+                  <p class="section-label">Pledges</p>
+                  <h2>All platform transactions</h2>
+                </div>
+              </div>
+              <div class="stack-list" id="adminPledges"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="confirm-modal hidden" id="deleteCampaignModal">
+          <div class="confirm-modal__card">
+            <div class="confirm-modal__header">
+              <div>
+                <p class="section-label">Delete campaign</p>
+                <h2>Remove this campaign permanently</h2>
+              </div>
+              <button class="confirm-modal__close" id="closeDeleteModalBtn" type="button">
+                ×
+              </button>
+            </div>
+
+            <p class="confirm-modal__text">
+              This action will remove
+              <strong id="deleteCampaignTitle">campaign</strong>
+              from the platform.
+            </p>
+
+            <div class="confirm-modal__actions">
+              <button class="btn btn--ghost" id="cancelDeleteBtn" type="button">
+                Cancel
+              </button>
+              <button class="btn btn--danger" id="confirmDeleteBtn" type="button">
+                Delete campaign
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <a class="brand" href="../index.html">
+              <span class="brand__mark">FR</span>
+              <span>FundRise</span>
+            </a>
+            <p>
+              Operational oversight for user safety, campaign quality, and
+              platform trust.
+            </p>
+          </div>
+
+          <div class="site-footer__links">
+            <div>
+              <h3>Admin tools</h3>
+              <span>User moderation</span>
+              <span>Campaign review</span>
+              <span>Pledge monitoring</span>
+            </div>
+
+            <div>
+              <h3>Governance</h3>
+              <span>Compliance</span>
+              <span>Risk control</span>
+              <span>Audit visibility</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>
