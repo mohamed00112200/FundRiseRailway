@@ -20,10 +20,15 @@
 
 ---
 
-## 🖼️ Preview
+## 🖼️ Screenshots
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x400?text=FundRise+Home+Page" width="80%" />
+  <img src="./public/assets/images/1.jpeg" width="45%" />
+  <img src="./public/assets/images/2.jpeg" width="45%" />
+</p>
+
+<p align="center">
+  <img src="./public/assets/images/3.jpeg" width="60%" />
 </p>
 
 ---
@@ -68,13 +73,11 @@ The system is built with a clean architecture and role-based access.
 
 ## 🧠 Tech Stack
 
-| Technology | Usage |
-|-----------|------|
-| HTML5 | Structure |
-| CSS3 | Styling (Responsive & Modular) |
-| JavaScript (ES6) | Logic & Modules |
-| JSON Server | Mock Backend API |
-| Railway | Deployment |
+- HTML5  
+- CSS3 (Responsive & Modular)  
+- JavaScript (ES6 Modules)  
+- JSON Server (Mock API)  
+- Railway (Deployment)  
 
 ---
 
@@ -85,60 +88,27 @@ FundRise/
 ├── public/
 │   ├── assets/
 │   ├── css/
-│   │   ├── main.css
-│   │   ├── components.css
-│   │   └── pages/
-│   │       ├── home.css
-│   │       ├── admin.css
-│   │       ├── auth.css
-│   │       └── form.css
-│   │
 │   ├── js/
-│   │   ├── main.js
-│   │   ├── config.js
-│   │   ├── utils.js
-│   │   ├── services/
-│   │   │   ├── apiService.js
-│   │   │   ├── authService.js
-│   │   │   ├── campaignService.js
-│   │   │   ├── pledgeService.js
-│   │   │   └── adminService.js
-│   │   │
-│   │   └── pages/
-│   │       ├── LandingPage.js
-│   │       ├── LoginPage.js
-│   │       ├── RegisterPage.js
-│   │       ├── HomeUserPage.js
-│   │       ├── HomeAdminPage.js
-│   │       └── CreateCampaignPage.js
-│   │
 │   ├── pages/
-│   │   ├── login.html
-│   │   ├── register.html
-│   │   ├── HomeUser.html
-│   │   ├── HomeAdmin.html
-│   │   └── CreateCampaign.html
-│   │
 │   └── index.html
 │
 ├── db.json
 ├── package.json
-├── package-lock.json
 └── README.md
 
 ---
 
 ## ⚙️ Getting Started
 
-### 1️⃣ Install dependencies
+### Install dependencies
 
 npm install
 
-### 2️⃣ Run server
+### Run server
 
 npm start
 
-### 📍 API Endpoint
+### API URL
 
 http://localhost:3000
 
@@ -146,33 +116,19 @@ http://localhost:3000
 
 ## 🔐 Demo Accounts
 
-### 🛠️ Admin
-
+### Admin
 Email: admin@fundrise.com  
 Password: admin123  
 
-### 🙋 User
-
+### User
 Email: m@m.com  
 Password: 123  
 
 ---
 
-## 🔄 Core Functionalities
-
-- Authentication & Authorization  
-- Role-based dashboards  
-- Campaign approval system  
-- CRUD operations using Fetch API  
-- Pledge system  
-- Image upload (Base64)  
-- Responsive UI  
-
----
-
 ## 🚀 Deployment
 
-This project is deployed using Railway
+Live on Railway:
 
 👉 https://fundriserailway-production.up.railway.app
 
@@ -180,11 +136,11 @@ This project is deployed using Railway
 
 ## 💡 Future Improvements
 
-- 💳 Stripe Payment Integration  
-- 🔐 JWT Authentication  
-- ☁️ Real Database (MongoDB / Supabase)  
-- 📊 Analytics Dashboard  
-- 🤖 AI Recommendation System  
+- Stripe Payment Integration  
+- JWT Authentication  
+- Real Database (MongoDB / Supabase)  
+- Analytics Dashboard  
+- AI Recommendation System  
 
 ---
 
